@@ -1,0 +1,148 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body
+{
+    background-color: #334155;
+    color: #fff;
+}
+
+.container
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1
+{
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+.game
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.game-board
+{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+.cell
+{
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 60px;
+    font-weight: 540;
+    height: 120px;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3)
+{
+    border-top: none;
+}
+
+.cell.cell:nth-child(3n){
+    border-right: none;
+}
+
+.cell.cell:nth-child(3n+1){
+    border-left: none;
+}
+
+.cell.cell:nth-child(n+7){
+    border-bottom: none;
+}
+
+.game-players
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.player
+{
+    margin-inline: 18px;
+    font-size: 24px;
+    font-weight: 520;
+}
+
+.restartBtn
+{
+    border: none;
+    background: #5f5fc4;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top:30px;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.restartBtn:hover
+{
+    background: #7272e1;
+}
+
+.cell.disabled
+{
+    background-color: #8c8c8c;
+}
+
+.alertBox
+{
+    position:absolute;
+    top:0;
+    background-color: #dfdfdf;
+    color: #4d4b51;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 40px;
+    display: none;
+    text-align: center;
+}
+
+@media screen and(max-width :550px)
+{
+    .container h1
+    {
+        font-size: 24px;
+    }
+    .game-board
+    {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(90px, 1fr));
+    }    
+
+    .cell
+    {
+        font-size: 50px;
+        height: 90px;
+    }
+}
+
